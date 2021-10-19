@@ -3,21 +3,20 @@
   <head>
     <title>TodoApp</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/src/styles.css" />
   </head>
 
   <body>
     <div class="wrap">
       <div class="input-box">
-        <input type="text" placeholder="Todoを入力してください" />
+        <input type="text" placeholder="Todoを入力" />
         <button>追加</button>
       </div>
 
       <div class="incomplete-box">
-        <h2>未完了のTODO</h2>
+        <h2 class="title">未完了のTODO</h2>
         <ul class="incomplete-list">
-          <li class="incomplete-item">
-            <div>Todoです</div>
+          <li class="list-row">
+            <div class="list-item">Todoです</div>
             <button>完了</button>
             <button>削除</button>
           </li>
@@ -25,10 +24,15 @@
       </div>
 
       <div class="complete-box">
-        <h2>完了したTODO</h2>
+        <h2 class="title">完了したTODO</h2>
         <ul class="complete-list">
-          <li class="complete-item">
-            <div>Todoです</div>
+          <li class="list-row">
+            <div class="list-item">Todoです</div>
+            <button>戻す</button>
+            <button>削除</button>
+          </li>
+          <li class="list-row">
+            <div class="list-item">Todoです</div>
             <button>戻す</button>
             <button>削除</button>
           </li>
