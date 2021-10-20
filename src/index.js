@@ -8,8 +8,6 @@ const onClickAdd = () => {
   addIncompleteLow(inputText);
 };
 
-const onClickBack = () => {};
-
 const addIncompleteLow = (text) => {
   //li生成
   const li = document.createElement("li");
@@ -44,6 +42,11 @@ const addIncompleteLow = (text) => {
     //戻すボタン作成
     const backButton = document.createElement("button");
     backButton.innerText = "戻す";
+    backButton.addEventListener("click", () => {
+      deleteFromCompleteList(backButton.parentNode);
+      const text = addTarget.firstElementChild.innerText;
+      addIncompleteLow(text);
+    });
 
     //liの子要素に入れ込む
     addTarget.appendChild(div);
@@ -78,6 +81,12 @@ const addIncompleteLow = (text) => {
 const deleteFromIncompleteList = (target) => {
   document
     .getElementById("incomplete-list")
+    .removeChild(target);
+};
+
+const deleteFromCompleteList = (target) => {
+  document
+    .getElementById("complete-list")
     .removeChild(target);
 };
 
